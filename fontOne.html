@@ -1,0 +1,26 @@
+﻿<html>
+	<head>
+		<title>Fone</title>
+		<link rel="stylesheet" href="css/font.css" type="text/css"/>
+	</head>
+	<body>
+		<div id="showArea"></div>
+		<div style="display:none" id="hideword">
+			欢迎光临 欢迎光临
+		</div>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script language="javascript">
+		var index=0;
+		var word=document.getElementById("hideword").innerHTML;
+		function type(){
+			document.getElementById("showArea").innerText = word.substring(0,index++);
+		}
+		var intervalTime = setInterval(type, 20);
+		function clearInterval(){
+			clearTimeout(intervalTime);
+		}
+		setTimeout(clearInterval,40);
+		setInterval(type, 50)
+	</script>
+	</body>
+</html>
